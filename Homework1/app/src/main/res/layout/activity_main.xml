@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/background">
 
     <!--<TextView
         android:layout_width="wrap_content"
@@ -14,6 +15,17 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" /> -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:text="@string/call_a_number"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,8 +41,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:padding="2dp"
-            app:cardElevation="10dp">
+            android:padding="50dp"
+            android:backgroundTint="@color/white"
+            android:layout_marginHorizontal="30dp"
+            app:cardElevation="0dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -41,9 +55,12 @@
                     android:id="@+id/phonenumber"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:textSize="35sp"
-                    android:text="+351"
+                    android:textSize="20sp"
+                    android:text="@string/indicative"
+                    android:textColor="@color/btnBack"
                     android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="10dp"
                     >
                 </TextView>
                 <ImageButton
@@ -52,7 +69,9 @@
                     android:layout_height="match_parent"
                     android:contentDescription="@android:string/emptyPhoneNumber"
                     android:layout_weight="1"
-                    android:src="@drawable/ic_backspace">
+                    android:src="@drawable/ic_backspace"
+                    android:backgroundTint="@color/btnBack"
+                    style="@android:style/Widget.Holo.Button">
 
                 </ImageButton>
 
@@ -63,19 +82,23 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5">
+            android:layout_weight="5"
+            android:backgroundTint="@color/background"
+            android:layout_marginHorizontal="30dp"
+            app:cardElevation="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="4"
+                android:weightSum="5"
                 android:orientation="vertical"
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_marginVertical="8dp">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -86,16 +109,20 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="null"
-                            android:textSize="15sp"
-                            android:backgroundTint="@android:color/darker_gray">
+                            android:text="@string/speed_dial"
+                            android:backgroundTint="@android:color/holo_purple"
+                            android:layout_marginHorizontal="4dp"
+                            android:textSize="15sp">
                         </Button>
                         <Button
                             android:id="@+id/memory2"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="null"
+                            android:text="@string/speed_dial"
+                            android:backgroundTint="@android:color/holo_purple"
+                            android:layout_marginHorizontal="4dp"
+
                             android:textSize="15sp">
                         </Button>
                         <Button
@@ -103,7 +130,10 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="null"
+                            android:text="@string/speed_dial"
+                            android:backgroundTint="@android:color/holo_purple"
+                            android:layout_marginHorizontal="4dp"
+
                             android:textSize="15sp">
                         </Button>
                     </LinearLayout>
@@ -125,8 +155,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="1"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button2"
@@ -134,8 +164,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="2"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button3"
@@ -143,8 +173,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="3"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                     </LinearLayout>
 
@@ -165,8 +195,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="4"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button5"
@@ -174,8 +204,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="5"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button6"
@@ -183,8 +213,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="6"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                     </LinearLayout>
 
@@ -205,8 +235,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="7"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button8"
@@ -214,8 +244,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="8"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button9"
@@ -223,8 +253,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="9"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                     </LinearLayout>
 
@@ -246,9 +276,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="*"
-                            android:textStyle="bold"
-                            android:textSize="45sp"
-                            android:backgroundTint="#000">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/button0"
@@ -256,8 +285,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="0"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                         <Button
                             android:id="@+id/buttonhash"
@@ -265,8 +294,8 @@
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="#"
-                            android:textStyle="bold"
-                            android:textSize="45sp">
+                            android:textSize="30sp"
+                            style="@android:style/Widget.Holo.Button">
                         </Button>
                     </LinearLayout>
 
@@ -277,11 +306,13 @@
 
         <ImageButton
             android:id="@+id/call"
-            android:layout_width="150dp"
+            android:layout_width="120dp"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:layout_marginVertical="40dp"
             android:src="@drawable/ic_baseline_call_24"
             android:background="@android:color/holo_green_dark"
+            style="@android:style/Widget.Holo.Button"
             >
         </ImageButton>
 

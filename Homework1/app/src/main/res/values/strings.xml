@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DialerApp</string>
+    <string name="call_a_number">Call a number</string>
+    <string name="indicative"> +351 </string>
+    <string name="speed_dial">★</string>
+    <string name="add_new_speed_dial">Add new speed dial</string>
+    <string name="submit">Add speed dial</string>
 </resources>
