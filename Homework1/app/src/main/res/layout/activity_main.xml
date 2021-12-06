@@ -19,7 +19,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="80dp"
         android:text="@string/call_a_number"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,11 +56,10 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:textSize="20sp"
-                    android:text="@string/indicative"
-                    android:textColor="@color/btnBack"
+                    android:textColor="@color/my_grey"
                     android:layout_weight="3"
                     android:gravity="center_vertical"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     >
                 </TextView>
                 <ImageButton
@@ -70,7 +69,7 @@
                     android:contentDescription="@android:string/emptyPhoneNumber"
                     android:layout_weight="1"
                     android:src="@drawable/ic_backspace"
-                    android:backgroundTint="@color/btnBack"
+                    android:backgroundTint="@color/my_grey"
                     style="@android:style/Widget.Holo.Button">
 
                 </ImageButton>
@@ -90,71 +89,74 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:weightSum="5"
                 android:orientation="vertical"
                 >
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginVertical="8dp">
-                    <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    style="?android:attr/buttonBarStyle">
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="3">
+                        android:weightSum="3">-->
                         <Button
                             android:id="@+id/memory1"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="@string/speed_dial"
                             android:backgroundTint="@android:color/holo_purple"
+                            android:textColor="@color/white"
                             android:layout_marginHorizontal="4dp"
-                            android:textSize="15sp">
+                            android:textSize="15sp"
+                            style="?android:attr/buttonBarButtonStyle"
+                            >
                         </Button>
                         <Button
                             android:id="@+id/memory2"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="@string/speed_dial"
                             android:backgroundTint="@android:color/holo_purple"
+                            android:textColor="@color/white"
                             android:layout_marginHorizontal="4dp"
-
-                            android:textSize="15sp">
+                            android:textSize="15sp"
+                            style="?android:attr/buttonBarButtonStyle">
                         </Button>
                         <Button
                             android:id="@+id/memory3"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="@string/speed_dial"
                             android:backgroundTint="@android:color/holo_purple"
+                            android:textColor="@color/white"
                             android:layout_marginHorizontal="4dp"
-
-                            android:textSize="15sp">
+                            android:textSize="15sp"
+                            style="?android:attr/buttonBarButtonStyle">
                         </Button>
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-                    <LinearLayout
+                    android:layout_height="wrap_content">
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="3">
+                        android:weightSum="3">-->
                         <Button
                             android:id="@+id/button1"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="1"
+                            android:text="@string/one"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -163,7 +165,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="2"
+                            android:text="@string/two"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -172,29 +174,28 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="3"
+                            android:text="@string/three"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-                    <LinearLayout
+                    android:layout_height="wrap_content">
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="3">
+                        android:weightSum="3">-->
                         <Button
                             android:id="@+id/button4"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="4"
+                            android:text="@string/four"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -203,7 +204,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="5"
+                            android:text="@string/five"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -212,29 +213,28 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="6"
+                            android:text="@string/six"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-                    <LinearLayout
+                    android:layout_height="wrap_content">
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
-                        android:weightSum="3">
+                        android:weightSum="3">-->
                         <Button
                             android:id="@+id/button7"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="7"
+                            android:text="@string/seven"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -243,7 +243,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="8"
+                            android:text="@string/eight"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -252,30 +252,29 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="9"
+                            android:text="@string/nine"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1">
-                    <LinearLayout
+                    android:layout_height="wrap_content">
+                    <!--<LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal"
                         android:weightSum="3"
-                        >
+                        >-->
                         <Button
                             android:id="@+id/buttonstar"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="*"
+                            android:text="@string/star"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -284,7 +283,7 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="0"
+                            android:text="@string/zero"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
@@ -293,11 +292,11 @@
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="#"
+                            android:text="@string/hash"
                             android:textSize="30sp"
                             style="@android:style/Widget.Holo.Button">
                         </Button>
-                    </LinearLayout>
+                    <!--</LinearLayout>-->
 
                 </LinearLayout>
 
@@ -310,12 +309,13 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:layout_marginVertical="40dp"
+            android:contentDescription="@string/call_a_number"
             android:src="@drawable/ic_baseline_call_24"
             android:background="@android:color/holo_green_dark"
             style="@android:style/Widget.Holo.Button"
             >
         </ImageButton>
 
-    </LinearLayout>>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

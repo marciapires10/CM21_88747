@@ -30,7 +30,6 @@ public class AddSpeedDial extends AppCompatActivity {
         sharedPreferences = this.getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
 
         String button_speed_dial = sharedPreferences.getString("button", "");
-        Log.d("nyTag", button_speed_dial);
 
         // edit texts inputs
         name = findViewById(R.id.name);
@@ -47,9 +46,7 @@ public class AddSpeedDial extends AppCompatActivity {
 
             Toast.makeText(AddSpeedDial.this, "Speed dial saved successfully!", Toast.LENGTH_SHORT).show();
 
-            //sharedPreferences.edit().apply();
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            intent.putExtra("buttonText", name.getEditableText().toString());
             startActivity(intent);
         });
 

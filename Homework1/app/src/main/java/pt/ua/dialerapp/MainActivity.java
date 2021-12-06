@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
         button_memory2.setText(sharedPreferences.getString("name_memory2", ""));
         button_memory3.setText(sharedPreferences.getString("name_memory3", ""));
 
-
         // image buttons
         clear_number = findViewById(R.id.clearnumber);
         call = findViewById(R.id.call);
@@ -70,29 +69,29 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Set buttons on Click Listeners
-        button1.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"1"));
+        button1.setOnClickListener(v -> addText("1"));
 
-        button2.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"2"));
+        button2.setOnClickListener(v -> addText("2"));
 
-        button3.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"3"));
+        button3.setOnClickListener(v -> addText("3"));
 
-        button4.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"4"));
+        button4.setOnClickListener(v -> addText("4"));
 
-        button5.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"5"));
+        button5.setOnClickListener(v -> addText("5"));
 
-        button6.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"6"));
+        button6.setOnClickListener(v -> addText("6"));
 
-        button7.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"7"));
+        button7.setOnClickListener(v -> addText("7"));
 
-        button8.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"8"));
+        button8.setOnClickListener(v -> addText("8"));
 
-        button9.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"9"));
+        button9.setOnClickListener(v -> addText("9"));
 
-        button_star.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"*"));
+        button_star.setOnClickListener(v -> addText("*"));
 
-        button0.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"0"));
+        button0.setOnClickListener(v -> addText("0"));
 
-        button_hash.setOnClickListener(v -> phone_number.setText(phone_number.getText().toString()+"#"));
+        button_hash.setOnClickListener(v -> addText("#"));
 
         // Click Listener to make a phone call
         call.setOnClickListener(v -> makePhoneCall(false, ""));
@@ -111,47 +110,56 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        // Long Click Listener on memory buttons to open new Activity and add or edit a speed dial.
         button_memory1.setOnLongClickListener(v -> {
-            SharedPreferences sharedPreferences1 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
-            sharedPreferences1.edit().putString("button", "memory1").apply();
+            //SharedPreferences sharedPreferences1 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
+            sharedPreferences.edit().putString("button", "memory1").apply();
             startActivity(new Intent(getApplicationContext(), AddSpeedDial.class));
             return true;
-        });
-
-        button_memory1.setOnClickListener(v -> {
-            SharedPreferences sharedPreferences12 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
-            String number = sharedPreferences12.getString("phone_number_memory1", "");
-            makePhoneCall(true, number);
         });
 
         button_memory2.setOnLongClickListener(v -> {
-            SharedPreferences sharedPreferences13 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
-            sharedPreferences13.edit().putString("button", "memory2").apply();
+            //SharedPreferences sharedPreferences13 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
+            sharedPreferences.edit().putString("button", "memory2").apply();
             startActivity(new Intent(getApplicationContext(), AddSpeedDial.class));
             return true;
-        });
-
-        button_memory2.setOnClickListener(v -> {
-            SharedPreferences sharedPreferences14 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
-            String number = sharedPreferences14.getString("phone_number_memory2", "");
-            makePhoneCall(true, number);
         });
 
         button_memory3.setOnLongClickListener(v -> {
-            SharedPreferences sharedPreferences15 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
-            sharedPreferences15.edit().putString("button", "memory3").apply();
+            //SharedPreferences sharedPreferences15 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
+            sharedPreferences.edit().putString("button", "memory3").apply();
             startActivity(new Intent(getApplicationContext(), AddSpeedDial.class));
             return true;
         });
 
+        // Click Listener on memory buttons to make a direct call.
+        button_memory1.setOnClickListener(v -> {
+            //SharedPreferences sharedPreferences12 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
+            String number = sharedPreferences.getString("phone_number_memory1", "");
+            makePhoneCall(true, number);
+        });
+
+        button_memory2.setOnClickListener(v -> {
+            //SharedPreferences sharedPreferences14 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
+            String number = sharedPreferences.getString("phone_number_memory2", "");
+            makePhoneCall(true, number);
+        });
+
         button_memory3.setOnClickListener(v -> {
-            SharedPreferences sharedPreferences16 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
-            String number = sharedPreferences16.getString("phone_number_memory3", "");
+            //SharedPreferences sharedPreferences16 = getSharedPreferences("pt.ua.dialerapp", MODE_PRIVATE);
+            String number = sharedPreferences.getString("phone_number_memory3", "");
             makePhoneCall(true, number);
         });
 
     }
 
+    public void addText(String value){
+        phone_number.setText(phone_number.getText().toString()+value);
+    }
+
+    // This function is called when the user wants to make a call.
+    // It can be from a speed dial or an input phone number.
     public void makePhoneCall(boolean speed_dial, String number){
 
         if (!speed_dial) {
@@ -162,7 +170,13 @@ public class MainActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PHONE_CALL);
         }
         else{
-            startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number)));
+            number = number.replace("#", "%23");
+            if (number.length() == 0){
+                Toast.makeText(MainActivity.this, "Please insert a valid phone number", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+number)));
+            }
         }
 
     }
@@ -181,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 else {
+                    number = number.replace("#", "%23");
                     startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+number)));
                 }
             }
