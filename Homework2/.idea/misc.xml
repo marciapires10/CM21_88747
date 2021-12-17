@@ -10,7 +10,7 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2152777777777778" />
         <entry key="app/src/main/res/layout/content_weather_forecast.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/layout/fragment_city_list.xml" value="0.10081053698074975" />
-        <entry key="app/src/main/res/layout/fragment_weather_forecast.xml" value="0.20729166666666668" />
+        <entry key="app/src/main/res/layout/fragment_weather_forecast.xml" value="0.22" />
         <entry key="app/src/main/res/layout/weather_forecast.xml" value="0.20729166666666668" />
       </map>
     </option>

@@ -122,7 +122,7 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{" +
+        return "Weather:" +
                 "globalIdLocal=" + globalIdLocal +
                 ", forecastDate='" + forecastDate + '\'' +
                 ", precipitaProb=" + precipitaProb +
@@ -132,6 +132,6 @@ public class Weather {
                 ", idWeatherType=" + idWeatherType +
                 ", classWindSpeed=" + classWindSpeed +
                 ", lastRefresh=" + lastRefresh +
-                '}';
+                ':';
     }
 }

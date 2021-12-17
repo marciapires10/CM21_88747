@@ -1,6 +1,7 @@
 package pt.ua.weatherforecastapp.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -47,8 +48,6 @@ public class MainActivity extends AppCompatActivity implements CityListAdapter.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        callWeatherConditionsDescriptions();
-
         // Create recycler view
         recyclerView = (RecyclerView) findViewById(R.id.cityRecyclerView);
 
@@ -60,16 +59,20 @@ public class MainActivity extends AppCompatActivity implements CityListAdapter.O
         recyclerView.setAdapter(adapter);
 
         // Give the recycler view a default layout manager
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
         tvCity = findViewById(R.id.city);
+
+        callWeatherConditionsDescriptions();
+
+        context = this;
 
         if (savedInstanceState != null) {
             isFragmentDisplayed =
                     savedInstanceState.getBoolean(STATE_FRAGMENT);
             weather_info = savedInstanceState.getString(INFO);
             if (isFragmentDisplayed) {
-                ((TextView) findViewById(R.id.city_name)).append(weather_info);
+                //((TextView) findViewById(R.id.city_name)).append(weather_info);
             }
         }
     }
@@ -78,6 +81,7 @@ public class MainActivity extends AppCompatActivity implements CityListAdapter.O
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        context = this;
         return true;
     }
 
@@ -127,7 +131,6 @@ public class MainActivity extends AppCompatActivity implements CityListAdapter.O
             public void receiveCitiesList(HashMap<String, City> citiesCollection) {
                 MainActivity.this.cities = citiesCollection;
                 //recyclerView.getAdapter().notifyItemInserted(citiesCollection.size()-1);
-                Log.d("MainActivity", cities.toString());
 
                 adapter.setCityList(cities);
                 adapter.setListener((CityListAdapter.OnNoteListener) context);
@@ -159,26 +162,50 @@ public class MainActivity extends AppCompatActivity implements CityListAdapter.O
 
     @Override
     public void onNoteClick(View v, int position){
-        Log.d("HELLO", "hello?");
         City city;
         int pos = 0;
         int localId = 0;
         for (String key : cities.keySet()){
             if (pos == position){
                 city = cities.get(key);
-
+                Log.d("WI", weather_info);
                 if (city != null){
                     localId = city.getGlobalIdLocal();
-                    callForecastForCity(localId);
-                    Log.d("LocalId", String.valueOf(localId));
+                    //callForecastForCity(localId);
+                    client.retrieveForecastForCity(localId, new ForecastForACityResultsObserver() {
+                        @Override
+                        public void receiveForecastList(List<Weather> forecast) {
+                            for (Weather day : forecast){
+                                weather_info += day.toString() + "\t";
+                            }
+
+                            Log.d("WI", weather_info);
+
+                            Context mcontext = v.getContext();
+                            Intent intent = new Intent(mcontext, WeatherForecastActivity.class);
+                            intent.putExtra(INFO, weather_info);
+                            mcontext.startActivity(intent);
+
+                        }
+
+                        @Override
+                        public void onFailure(Throwable cause) {
+                            Log.d("MainActivity", "Failed to get forecast for 5 days");
+                        }
+                    });
+                }
+                else {
+                    Log.d("MainActivity", "Unknown city " + city);
                 }
             }
+            pos++;
         }
     }
 
     public void onSaveInstanceState(Bundle savedInstanceState){
         // Save the state of the fragment (true=open, false=closed).
         savedInstanceState.putBoolean(STATE_FRAGMENT, isFragmentDisplayed);
+        savedInstanceState.putString(INFO, weather_info);
         super.onSaveInstanceState(savedInstanceState);
     }
 

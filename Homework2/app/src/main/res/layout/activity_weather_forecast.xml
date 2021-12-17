@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.WeatherForecastActivity">
 
-    <include layout="@layout/fragment_city_list"></include>
+    <include layout="@layout/content_weather_forecast"></include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

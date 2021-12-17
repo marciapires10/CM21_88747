@@ -24,6 +24,7 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityVi
     private List<String> cities = new ArrayList<>();
     private LayoutInflater inflater;
     private OnNoteListener listener;
+    private Context context;
 
 
     class CityViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -34,8 +35,8 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityVi
         public CityViewHolder (View itemView, CityListAdapter adapter){
             super(itemView);
             cityItemView = itemView.findViewById(R.id.city);
-            this.adapter = adapter;
             itemView.setOnClickListener(this);
+            this.adapter = adapter;
         }
 
         @Override
@@ -54,6 +55,7 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityVi
     public CityListAdapter(Context context, HashMap<String, City> cityList){
         inflater = LayoutInflater.from(context);
         this.cityList = cityList;
+        this.context = context;
     }
 
 
@@ -96,9 +98,11 @@ public class CityListAdapter extends RecyclerView.Adapter<CityListAdapter.CityVi
         this.cityList = cityList;
     }
 
-    public void setListener(OnNoteListener listener){ this.listener = listener; }
+    public void setListener(OnNoteListener listener){
+        this.listener = listener;
+    }
 
     public interface OnNoteListener{
-        void onNoteClick(View v, int position);
+        void onNoteClick(View view, int position);
     }
 }
