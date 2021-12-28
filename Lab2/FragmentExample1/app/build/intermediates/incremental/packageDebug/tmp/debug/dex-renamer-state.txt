@@ -1,0 +1,4 @@
+#Tue Dec 07 19:11:09 WET 2021
+base.0=/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

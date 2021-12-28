@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/drawable_beatles_anthology_box.jpg.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/drawable/beatles_anthology_box.jpg"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/layout_fragment_simple.xml.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/layout/fragment_simple.xml"
+    },
+    {
+        "merged": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/home/marciapires/Desktop/Universidade/5ano/CM/Android/Lab2/FragmentExample1/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    }
+]
